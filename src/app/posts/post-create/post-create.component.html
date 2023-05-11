@@ -1,8 +1,10 @@
-<h1>post-create-element</h1>
 <mat-card>
     <mat-form-field>
         <textarea matInput rows="10" [(ngModel)]="newPost"></textarea>
     </mat-form-field>
+    <button (click)="onAddPost()"
+     mat-raised-button
+     color="accent"
+     >Submit</button>
 </mat-card>
-    <button (click)="onAddPost()">Submit</button>
 {{newPost}}
