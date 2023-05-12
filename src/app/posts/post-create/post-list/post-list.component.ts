@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, Input } from "@angular/core";
 import { MatAccordion } from "@angular/material/expansion";
 
 
@@ -9,10 +9,6 @@ import { MatAccordion } from "@angular/material/expansion";
 })
 export class PostListComponent{
 
-    posts =[
-        {title:"First Post", content:"First posts content"},
-        {title:"Second Post", content:"Second posts content"},
-        {title:"Third  Post", content:"Third posts content"},
-    ]
+    @Input() posts:any=[];
 
 }
