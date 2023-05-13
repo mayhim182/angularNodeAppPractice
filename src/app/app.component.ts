@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import {post} from "./posts/post.model";
 
 @Component({
   selector: 'app-root',
@@ -7,7 +8,7 @@ import { Component, Input } from '@angular/core';
 })
 export class AppComponent {
   
-  storedPosts:any=[];
+  storedPosts:post[]=[];
 
   onPostAdded(post:any){
     console.log('hit');
