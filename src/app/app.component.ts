@@ -10,8 +10,4 @@ export class AppComponent {
   
   storedPosts:post[]=[];
 
-  onPostAdded(post:any){
-    console.log('hit');
-    this.storedPosts.push(post);
-  }
 }
