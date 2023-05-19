@@ -4,8 +4,8 @@ const Post=require('./models/post');
 const mongoose=require('mongoose');
 
 const app=express();
-
-mongoose.connect("mongodb+srv://mayankshoppin21:EbRJFh3FxNODirwh@cluster0.ga4oz41.mongodb.net/?retryWrites=true&w=majority").then(
+                                                                                            // name of db
+mongoose.connect("mongodb+srv://mayankshoppin21:MPeBvjoXKAgvUf3r@cluster0.ga4oz41.mongodb.net/node-angular?retryWrites=true&w=majority").then(
     ()=>{
         console.log("Connected to Database!");
     }
@@ -28,30 +28,34 @@ app.use((req,res,next)=>{
     next();
 });
 
-app.post("api/posts",(req,res,next)=>{
-    // const post=req.body;
+
+
+app.post("/api/posts",(req,res,next)=>{
     const post=new Post({
         title:req.body.title,
         content:req.body.content
     });
+    post.save();
     console.log(post);
-    res.status(201).json({
-        message:'Post added successfully',
-    });
 });
 
-app.use('/api/posts',(req,res,next)=>{
-    const posts = [
-        {
-            id:'fadf1241l',
-            title:'First server side code',
-            content:'This is coming from the server'
+app.get('/api/posts',(req,res,next)=>{
+    Post.find().then(
+        documents=>{
+            res.status(200).json({
+                message:'Posts fetched successfully!',
+                posts:documents
+            });
         }
-    ];
-    res.status(200).json({
-        message:'Posts fetched successfully!',
-        posts:posts
-    });
+    ).catch(
+        error=>{
+            console.log(error);
+        }
+    );
 })
+
+// app.listen(3000,()=>{
+//     console.log('server running on port 3000');
+// });
 
 module.exports=app;
