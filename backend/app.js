@@ -36,9 +36,25 @@ app.post("/api/posts",(req,res,next)=>{
         content:req.body.content
     });
     post.save().then((result)=>{
-        console.log(result);
+        res.status(201).json({
+            message:"Post added successfully",
+            postId:result._id
+        })
     });
     console.log(post);
+});
+
+
+app.put("api/posts/:id",(req,res,next)=>{
+    const post = new Post({
+        _id:req.body._id,
+        title:req.body.title,
+        content:req.body.content
+    });
+    Post.updateOne({_id:req.params.id},post).then(result=>{
+        console.log(result);
+        res.status(200).json({message:"updated successfully!"});
+    });
 });
 
 app.get('/api/posts',(req,res,next)=>{

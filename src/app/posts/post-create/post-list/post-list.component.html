@@ -5,7 +5,7 @@
         </mat-expansion-panel-header>
             <p style="color: black;">{{pos.content}}</p>
         <mat-action-row>
-            <button mat-button color="accent">Edit</button>
+            <a mat-button color="accent" [routerLink]="['/edit',pos.id]">Edit</a>
             <button mat-button color="warn" (click)="onDelete(pos.id)">Delete</button>
         </mat-action-row>
     </mat-expansion-panel>
