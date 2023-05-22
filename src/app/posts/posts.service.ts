@@ -57,9 +57,12 @@ export class PostsService {
   }
 
   updatePost(id:string, title:string, content:string){
+    console.log(id);
     const post:post ={id:id,title:title,content:content};
     this.http.put("http://localhost:3000/api/posts/"+id,post).subscribe(
-      response=>{console.log(response);}
+      (response)=>{
+        console.log(response);
+      }
     );
   }
 
