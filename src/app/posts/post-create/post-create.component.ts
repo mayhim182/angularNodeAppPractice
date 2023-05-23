@@ -15,7 +15,7 @@ export class PostCreateComponent implements OnInit {
   // postCreated = new EventEmitter<post>();
   private mode = 'create';
   private postId: string = '';
-  public post!:post;
+  public post:post={id:'',title:'',content:''};
 
   constructor(
     public postsService: PostsService,
@@ -28,7 +28,11 @@ export class PostCreateComponent implements OnInit {
         this.mode = 'edit';
         const postId = paramMap.get('postId');
         this.postId = postId !== null ? postId : '';
-        this.post=this.postsService.getPost(this.postId);
+        this.postsService.getPost(this.postId).subscribe(
+            (postData)=>{
+                this.post={id:postData._id,title:postData.title,content:postData.content};
+            }
+        );
       } else {
         this.mode = 'create';
         this.postId = '';
