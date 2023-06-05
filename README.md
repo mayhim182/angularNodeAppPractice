@@ -34,7 +34,7 @@ or
 
 
 ```bash
-  ng server --open
+  ng serve --open
 ```
 
 to open in the default browser
