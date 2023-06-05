@@ -1,27 +1,40 @@
-# MeanCourse
+#Mean practice
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.1.
+To get started with this project
+clone this repository into your local machine.
 
-## Development server
+In the same directory path open terminal/command prompt
+run 
+```bash
+  npm install
+```
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+To install all the node dependencies required for this project
 
-## Code scaffolding
+now open in another tab one more window of command prompt 
+and run 
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+```bash
+  node run start:server
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+to start your node.js express server
 
-## Running unit tests
+and now in previous command prompt window run 
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
+```bash
+  ng serve
+```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+to start angular
 
-## Further help
+or 
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+```bash
+  ng server --open
+```
+
+to open in the default browser
