@@ -28,10 +28,8 @@ and now in previous command prompt window run
   ng serve
 ```
 
-to start angular
-
-or 
-
+to start angular use ☝️
+ otherwise
 
 ```bash
   ng serve --open
